@@ -3,16 +3,15 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Rukey7'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 4
         versionName "1.0.3"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -25,16 +24,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    testCompile 'junit:junit:4.12'
+    compileOnly 'androidx.appcompat:appcompat:1.0.0-beta01'
+    testImplementation 'junit:junit:4.12'
     // ijkplayer
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.8.1'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.8.1'
+    compileOnly 'tv.danmaku.ijk.media:ijkplayer-java:0.7.8.1'
+    compileOnly 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.8.1'
 //    compile 'com.github.Rukey7:ijkplayer-armv7a:0.7.5'
     // Danmaku
-    compile 'com.github.ctiao:DanmakuFlameMaster:0.6.2'
+    api 'com.github.ctiao:DanmakuFlameMaster:0.6.2'
 }
